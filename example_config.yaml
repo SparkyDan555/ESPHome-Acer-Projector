@@ -72,10 +72,8 @@ button:
       name: "${friendly_name} Freeze"
     keystone_up:
       name: "${friendly_name} Keystone Up"
-      entity_category: config
     keystone_down:
       name: "${friendly_name} Keystone Down"
-      entity_category: config
 
 # Configure sensors
 sensor:
