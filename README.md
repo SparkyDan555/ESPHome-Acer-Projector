@@ -34,12 +34,9 @@ Add this to your YAML configuration:
 
 ```yaml
 external_components:
-  - source: github://your-username/your-repo@main
+  - source: github://SparkyDan555/ESPHome-Acer-Projector@main
     components: [acer_projector]
 ```
-
-Replace `your-username/your-repo` with the actual GitHub repository where you've uploaded this component.
-
 ## Hardware Setup
 
 Connect the ESP8266/ESP32 to the projector's RS232 port using an appropriate level shifter/converter (RS232 to TTL converter) as RS232 operates at different voltage levels than the ESP.
