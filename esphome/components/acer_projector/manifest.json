@@ -1,0 +1,7 @@
+{
+  "name": "Acer Projector",
+  "documentation": "https://github.com/SparkyDan555/ESPHome-Acer-Projector",
+  "dependencies": ["uart"],
+  "codeowners": ["@SparkyDan555"],
+  "version": "1.0"
+} 

@@ -37,8 +37,8 @@ wifi:
 
 # Use the external component from GitHub
 external_components:
-  - source: github://SparkyDan555/ESPHome-Acer-Projector@main
-    components: [acer_projector]
+  acer_projector:
+    source: github://SparkyDan555/ESPHome-Acer-Projector@main
 
 # Configure a UART component for the RS232 connection
 uart:
