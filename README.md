@@ -34,8 +34,10 @@ Add this to your YAML configuration:
 
 ```yaml
 external_components:
-  - source: github://SparkyDan555/ESPHome-Acer-Projector@main
-    components: [acer_projector]
+  - source: 
+      type: git
+      url: https://github.com/SparkyDan555/ESPHome-Acer-Projector
+      ref: main
 ```
 ## Hardware Setup
 
