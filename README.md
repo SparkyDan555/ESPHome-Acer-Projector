@@ -79,18 +79,12 @@ button:
     acer_projector_id: acer_projector_device
     hide:
       name: "Acer Projector Hide Display"
-      icon: "mdi:eye-off"
     freeze:
       name: "Acer Projector Freeze"
-      icon: "mdi:snowflake"
     keystone_up:
       name: "Acer Projector Keystone Up"
-      icon: "mdi:perspective-more"
-      entity_category: config
     keystone_down:
       name: "Acer Projector Keystone Down"
-      icon: "mdi:perspective-less"
-      entity_category: config
 
 # Configure sensors
 sensor:
@@ -98,7 +92,6 @@ sensor:
     acer_projector_id: acer_projector_device
     lamp_hours:
       name: "Acer Projector Lamp Hours"
-      icon: "mdi:timer-sand"
 
 # Configure binary sensors
 binary_sensor:
