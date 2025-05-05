@@ -1,0 +1,99 @@
+# Example ESPHome configuration using the acer_projector component
+# Note: This is just an example and should be customized to your needs
+
+substitutions:
+  name: acer_projector
+  friendly_name: "Acer Projector"
+
+esphome:
+  name: ${name}
+  friendly_name: ${friendly_name}
+
+esp8266:
+  board: d1_mini
+
+# Enable logging
+logger:
+  level: INFO
+  logs:
+    acer_projector: DEBUG
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: !secret api_encryption_key
+
+ota:
+  password: !secret ota_password
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot if WiFi connection fails
+  ap:
+    ssid: "${friendly_name} Fallback Hotspot"
+    password: !secret fallback_password
+
+external_components:
+  - source: 
+      type: local
+      path: custom_components
+
+# Configure a UART component for the RS232 connection
+uart:
+  tx_pin: GPIO1  # D10 on ESP8266 D1 Mini
+  rx_pin: GPIO3  # D9 on ESP8266 D1 Mini
+  baud_rate: 9600
+  data_bits: 8
+  parity: NONE
+  stop_bits: 1
+
+# Configure the acer_projector component
+acer_projector:
+  id: acer_projector_device
+
+# Configure switches
+switch:
+  - platform: acer_projector
+    acer_projector_id: acer_projector_device
+    power:
+      name: "${friendly_name} Power"
+    sync_3d:
+      name: "${friendly_name} 3D Mode"
+
+# Configure buttons
+button:
+  - platform: acer_projector
+    acer_projector_id: acer_projector_device
+    hide:
+      name: "${friendly_name} Hide Display"
+    freeze:
+      name: "${friendly_name} Freeze"
+    keystone_up:
+      name: "${friendly_name} Keystone Up"
+      entity_category: config
+    keystone_down:
+      name: "${friendly_name} Keystone Down"
+      entity_category: config
+
+# Configure sensors
+sensor:
+  - platform: acer_projector
+    acer_projector_id: acer_projector_device
+    lamp_hours:
+      name: "${friendly_name} Lamp Hours"
+
+# Configure binary sensors
+binary_sensor:
+  - platform: acer_projector
+    acer_projector_id: acer_projector_device
+    lamp_status:
+      name: "${friendly_name} Lamp Status"
+
+# Configure text sensors
+text_sensor:
+  - platform: acer_projector
+    acer_projector_id: acer_projector_device
+    model:
+      name: "${friendly_name} Model" 
