@@ -35,10 +35,10 @@ wifi:
     ssid: "${friendly_name} Fallback Hotspot"
     password: !secret fallback_password
 
+# Use the external component from GitHub
 external_components:
-  - source: 
-      type: local
-      path: custom_components
+  - source: github://SparkyDan555/ESPHome-Acer-Projector@main
+    components: [acer_projector]
 
 # Configure a UART component for the RS232 connection
 uart:
